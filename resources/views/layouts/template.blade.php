@@ -5,8 +5,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Situs Cek Data Akademik by Barzada X SatuHaluan Academy">
+    <meta name="keywords" content="SatuHaluan Academy, CekData, barzada, barzada31">
+    <meta name="author" content="Fariq Sutikno">
 
-    <link rel="shortcut icon" href="logo_sh.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('logo_sh.ico') }}" type="image/x-icon">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">

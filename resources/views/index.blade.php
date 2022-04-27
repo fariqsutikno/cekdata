@@ -14,7 +14,7 @@
                 <p class="lead">Pusat Data Pokok Alumni PIAT Angkatan 31 (Barzada)</p>
             </div>
             <div class="col-md-3 float-right d-none d-md-block">
-                <img src="img/logo_sh.png" style="width: 7em;" alt="">
+                <img src="https://i.ibb.co/fd2WQRn/logo-sh.png" style="width: 7em;" alt="Logo SH">
             </div>
         </div>
     </div>
@@ -63,10 +63,11 @@
 @push('script')
     @if (session('success'))
         <script>
-            Swal.fire(
-                '{{ session('success') }}',
-                'success'
-            )
+            Swal.fire({
+                title: '{{ session('success') }}',
+                icon: 'success',
+                timer: 2000,
+            })
         </script>
     @endif
 @endpush

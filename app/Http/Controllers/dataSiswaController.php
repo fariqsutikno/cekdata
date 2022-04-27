@@ -99,7 +99,7 @@ class dataSiswaController extends Controller
             'requestStatus'=> 'waiting'
             ]);
             if($dataSiswa){
-                return redirect()->route('index')->with(['success' => 'Pembenaran berhasil diajukan!']);
+                return redirect()->route('index')->with(['success' => 'Pembaruan data berhasil diajukan!']);
             }else{
                 return 'Gagal Menginput';
             }
@@ -112,11 +112,11 @@ class dataSiswaController extends Controller
     public function search(Request $request)
     {
         $username = $request->username;
-        $password = date("Y-m-d", strtotime($request->password));
+        $password = $request->password;
         if($username && $password){
             $dataSiswa  = DB::table('data_siswa')->where('nism', $username)->first();
-            $passwordInDB = date("dmY", strtotime($dataSiswa->birthDate));
-            if ($dataSiswa->password = $passwordInDB) {
+            $passwordInDB = substr($dataSiswa->birthDate, 8, 2) . substr($dataSiswa->birthDate, 5, 2) . substr($dataSiswa->birthDate, 0, 4);;
+            if ($password == $passwordInDB) {
                 return view('detailSiswa', compact('dataSiswa'));
             }else {
                 $usernameInDB = DB::table('data_siswa')->where('nism', $username)->first();

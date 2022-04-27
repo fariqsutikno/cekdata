@@ -14,11 +14,12 @@
             <div class="row">
                 <div class="col-md-2 my-3 mx-auto d-block">
                     <input type="hidden" name="photoLink" value="{{ $dataSiswa->photoLink }}">
-                    <img src="{{ $dataSiswa->photoLink }}" class="rounded" width="180"
-                        alt="{{ $dataSiswa->fullName }}">
+                    <img src="https://drive.google.com/uc?export=view&id={{ $dataSiswa->photoLink }}"
+                        class="rounded" width="180" alt="{{ $dataSiswa->fullName }}">
                     <small class="form-text text-muted text-center">Foto Ijazah - {{ $dataSiswa->fullName }} -
                         {{ $dataSiswa->class12 }}</small>
-                    <a href="{{ $dataSiswa->photoLink }}" class="btn btn-sm btn-info">Download Foto</a>
+                    <a href="https://drive.google.com/uc?export=download&id={{ $dataSiswa->photoLink }}"
+                        class="btn btn-sm btn-info">Download Foto</a>
                 </div>
                 <div class="col-md-8 ">
                     <h5>Nomor Identitas</h5>
