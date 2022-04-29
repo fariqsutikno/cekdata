@@ -53,6 +53,7 @@ return new class extends Migration
             $table->string('photoLink')->nullable();
             $table->string('myPhone')->nullable();
             $table->string('shEmail')->nullable();
+            $table->string('passwordEmail')->nullable();
             $table->string('myEmail')->nullable();
             $table->string('status')->default('nonaktif');
             $table->timestamps();

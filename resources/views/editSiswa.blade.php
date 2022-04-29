@@ -41,7 +41,7 @@
                         <tr>
                             <td>NIK</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="nik" name="nik" value="{{ $dataSiswa->nik }}">
+                                    id="nik" name="nik" value="{{ $dataSiswa->nik }}" placeholder="Isi NIK mu disini">
                             </td>
                         </tr>
                     </table>
@@ -50,25 +50,29 @@
                         <tr>
                             <td>Nama Lengkap</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="fullName" name="fullName" value="{{ $dataSiswa->fullName }}">
+                                    id="fullName" name="fullName" value="{{ $dataSiswa->fullName }}"
+                                    placeholder="Isi Nama Lengkap mu disini">
                             </td>
                         </tr>
                         <tr>
                             <td>Nama Arab</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="arabicName" name="arabicName" value="{{ $dataSiswa->arabicName }}"></td>
+                                    id="arabicName" name="arabicName" value="{{ $dataSiswa->arabicName }}"
+                                    placeholder="Isi Nama Arab mu disini"></td>
                         </tr>
                         <tr>
                             <td>Tempat Lahir</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="birthPlace" name="birthPlace" value="{{ $dataSiswa->birthPlace }}"></td>
+                                    id="birthPlace" name="birthPlace" value="{{ $dataSiswa->birthPlace }}"
+                                    placeholder="Isi Tempat Lahir mu disini"></td>
                         </tr>
                         <tr>
                             <td>Tanggal Lahir</td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
                                     id="birthDate" name="birthDate"
-                                    value="{{ date('d-m-Y', strtotime($dataSiswa->birthDate)) }}">
+                                    value="{{ date('d-m-Y', strtotime($dataSiswa->birthDate)) }}"
+                                    placeholder="Isi Tanggal Lahir mu disini">
                                 <small class="form-text text-muted">Format yang digunakan adalah DD-MM-YYYY</small>
                             </td>
                         </tr>
@@ -121,40 +125,49 @@
                             <td>Kamar Kelas 10 </td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="room10" name="room10" value="{{ $dataSiswa->room10 }}">
+                                    id="room10" name="room10" value="{{ $dataSiswa->room10 }}"
+                                    placeholder="Isi Kamar Kelas 10 mu disini">
                             </td>
                         </tr>
                         <tr>
                             <td>Kamar Kelas 11 </td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="room11" name="room11" value="{{ $dataSiswa->room11 }}">
+                                    id="room11" name="room11" value="{{ $dataSiswa->room11 }}"
+                                    placeholder="Isi Kamar Kelas 11 mu disini - Tulis PJJ, jika kamu ambil PJJ">
                             </td>
                         </tr>
                         <tr>
                             <td>Kamar Kelas 12 </td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="room12" name="room12" value="{{ $dataSiswa->room12 }}">
+                                    id="room12" name="room12" value="{{ $dataSiswa->room12 }}"
+                                    placeholder="Isi Kamar Kelas 12 mu disini">
                             </td>
                         </tr>
                         <tr>
                             <td>Alamat Lengkap </td>
                             <td>
                                 <textarea class="form-control form-control-sm @error('title') is-invalid @enderror" required id="address"
-                                    name="address">{{ $dataSiswa->address }}</textarea>
+                                    name="address">{{ $dataSiswa->address ? $dataSiswa->address : 'Isi Alamat Rumah Kamu disini' }}</textarea>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="village" name="village" value="{{ $dataSiswa->village }}">
+                                    id="village" name="village" value="{{ $dataSiswa->village }}"
+                                    placeholder="Isi Nama Desa/Kelurahan mu disini">
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="district" name="district" value="{{ $dataSiswa->district }}">
+                                    id="district" name="district" value="{{ $dataSiswa->district }}"
+                                    placeholder="Isi Nama Kecamatan mu disini">
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="city" name="city" value="{{ $dataSiswa->city }}">
+                                    id="city" name="city" value="{{ $dataSiswa->city }}"
+                                    placeholder="Isi Nama Kab/Kota mu disini">
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="province" name="province" value="{{ $dataSiswa->province }}">
+                                    id="province" name="province" value="{{ $dataSiswa->province }}"
+                                    placeholder="Isi Nama Provinsi mu disini">
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="zipCode" name="zipCode" value="{{ $dataSiswa->zipCode }}">
+                                    id="zipCode" name="zipCode" value="{{ $dataSiswa->zipCode }}"
+                                    placeholder="Isi Kode Pos mu disini">
                                 <small class="form-text text-muted">Jangan lupa lengkapi unsur-unsur berikut : jalan, RT/RW,
-                                    desa/kelurahan, kecamatan, kabupaten, kode pos!</small>
+                                    desa/kelurahan, kecamatan, kabupaten, kode pos! Isi dengan alamat rumah guna memudahkan
+                                    hal yang berkaitan dengan pengiriman berkas.</small>
                             </td>
                         </tr>
                     </table>
@@ -164,22 +177,26 @@
                         <tr>
                             <td>Nama SD</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="SDName" name="SDName" value="{{ $dataSiswa->SDName }}"></td>
+                                    id="SDName" name="SDName" value="{{ $dataSiswa->SDName }}"
+                                    placeholder="Isi Nama SD mu disini"></td>
                         </tr>
                         <tr>
                             <td>Tahun Kelulusan SD</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="SDYear" name="SDYear" value="{{ $dataSiswa->SDYear }}"></td>
+                                    id="SDYear" name="SDYear" value="{{ $dataSiswa->SDYear }}"
+                                    placeholder="Isi Tahun Kelulusan SD mu disini"></td>
                         </tr>
                         <tr>
                             <td>Nama SMP</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="SMPName" name="SMPName" value="{{ $dataSiswa->SMPName }}"></td>
+                                    id="SMPName" name="SMPName" value="{!! substr($dataSiswa->nism, 0, 2) == 16 ? 'MTs Al Irsyad Tengaran' : $dataSiswa->SMPName !!}"
+                                    placeholder="Isi Nama SMP mu disini"></td>
                         </tr>
                         <tr>
                             <td>Tahun Kelulusan SMP</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    id="SMPYear" name="SMPYear" value="{{ $dataSiswa->SMPYear }}"></td>
+                                    id="SMPYear" name="SMPYear" value="{!! substr($dataSiswa->nism, 0, 2) == 16 ? '2019' : $dataSiswa->SMPYear !!}"
+                                    placeholder="Isi Tahun Kelulusan SMP mu disini"></td>
                         </tr>
                     </table>
 
@@ -188,7 +205,8 @@
                         <tr>
                             <td>Nama Ayah</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="fatherName" value="{{ $dataSiswa->fatherName }}"></td>
+                                    name="fatherName" value="{{ $dataSiswa->fatherName }}"
+                                    placeholder="Isi Nama Ayah mu disini"></td>
                         </tr>
                         <tr>
                             <td>Status Ayah</td>
@@ -200,21 +218,26 @@
                         <tr>
                             <td>Pekerjaan Ayah</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="fatherJob" value="{{ $dataSiswa->fatherJob }}"></td>
+                                    name="fatherJob" value="{{ $dataSiswa->fatherJob }}"
+                                    placeholder="Isi Pekerjaan Ayah mu disini"><small class="form-text text-muted">Jika
+                                    sudah tiada, cukup tulis strip (-) saja.</small></td>
+
                         </tr>
                         <tr>
                             <td>No Telp Ayah</td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="fatherPhone" value="{{ $dataSiswa->fatherPhone }}">
+                                    name="fatherPhone" value="{{ $dataSiswa->fatherPhone }}"
+                                    placeholder="Isi Nomor Ayah mu disini">
                                 <small class="form-text text-muted">Gunakan format kode negara, seperti 6285xxxx. Bukan
-                                    085xxxxx.</small>
+                                    085xxxxx. Jika sudah tiada, cukup tulis strip (-) saja.</small>
                             </td>
                         </tr>
                         <tr>
                             <td>Nama Ibu </td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="motherName" value="{{ $dataSiswa->motherName }}"></td>
+                                    name="motherName" value="{{ $dataSiswa->motherName }}"
+                                    placeholder="Isi Nama Ibu mu disini"></td>
                         </tr>
                         <tr>
                             <td>Status Ibu </td>
@@ -226,22 +249,26 @@
                         <tr>
                             <td>Pekerjaan Ibu </td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="motherJob" value="{{ $dataSiswa->motherJob }}"></td>
+                                    name="motherJob" value="{{ $dataSiswa->motherJob }}"
+                                    placeholder="Isi Pekerjaan Ibu mu disini"><small class="form-text text-muted">Jika sudah
+                                    tiada, cukup tulis strip (-) saja.</small></td>
+
                         </tr>
                         <tr>
                             <td>No Telp Ibu </td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="motherPhone" value="{{ $dataSiswa->motherPhone }}">
+                                    name="motherPhone" value="{{ $dataSiswa->motherPhone }}"
+                                    placeholder="Isi No Telp Ibu mu disini">
                                 <small class="form-text text-muted">Gunakan format kode negara, seperti 6285xxxx. Bukan
-                                    085xxxxx.</small>
+                                    085xxxxx. Jika sudah tiada, cukup tulis strip (-) saja.</small>
                             </td>
                         </tr>
                     </table>
                     <h5>Status & Data Kelanjutan</h5>
                     <table class="table table-sm">
                         <tr>
-                            <td>Status Pernikahan</td>
+                            <td>Status Pernikahan Kamu</td>
                             <td>
                                 <select class="custom-select my-1 mr-sm-2" name="maritalStatus" id="maritalStatus" required>
                                     <option {{ $dataSiswa->maritalStatus == 'Belum menikah' ?? 'selected' }}>Belum
@@ -258,12 +285,19 @@
                         <tr>
                             <td>Lokasi Khidmah</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="khidmahPlace" value="{{ $dataSiswa->khidmahPlace }}"></td>
+                                    name="khidmahPlace" value="{{ $dataSiswa->khidmahPlace }}"
+                                    placeholder="Isi Lokasi Khidmah mu disini"><small class="form-text text-muted">Tuliskan
+                                    posisi dan nama lembaga nya. Jika tidak khidmah,
+                                    tulis "Tidak Khidmah"</small></td>
+
                         </tr>
                         <tr>
                             <td>Studi Lanjut</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="furtherStudy" value="{{ $dataSiswa->furtherStudy }}"></td>
+                                    name="furtherStudy" value="{{ $dataSiswa->furtherStudy }}"
+                                    placeholder="Isi Studi Lanjut mu disini"><small class="form-text text-muted">Jika belum
+                                    melanjutkan studi,
+                                    tulis "Belum Melanjutkan Studi"</small></td>
                         </tr>
                         <tr>
                             <td>Link Drive Berkas </td>
@@ -276,10 +310,10 @@
                     <h5>Kontak</h5>
                     <table class="table table-sm">
                         <tr>
-                            <td>No WA </td>
+                            <td>No WA Aktif</td>
                             <td>
                                 <input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="myPhone" value="{{ $dataSiswa->myPhone }}">
+                                    name="myPhone" value="{{ $dataSiswa->myPhone }}" placeholder="Isi No WA mu disini">
                                 <small class="form-text text-muted">Gunakan format kode negara, seperti 6285xxxx. Bukan
                                     085xxxxx.</small>
                             </td>
@@ -295,9 +329,10 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Alamat Email Pribadi</td>
+                            <td>Alamat Email Aktif Pribadi</td>
                             <td><input class="form-control form-control-sm @error('title') is-invalid @enderror" required
-                                    name="myEmail" value="{{ $dataSiswa->myEmail }}">
+                                    name="myEmail" value="{{ $dataSiswa->myEmail }}"
+                                    placeholder="Isi Alamat Email Aktif Pribadi mu disini">
                             </td>
                         </tr>
                     </table>

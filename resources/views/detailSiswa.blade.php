@@ -32,20 +32,23 @@
                             {{ date('d M Y', strtotime($dataSiswa->birthDate)) }}</td>
                     </tr>
                     <tr>
-                        <td>Kelas </td>
-                        <td><span class="badge mx-1 badge-info">{{ $dataSiswa->class10 }}</span><span
-                                class="badge mx-1 badge-danger">{{ $dataSiswa->class11 }}</span><span
-                                class="badge mx-1 badge-success">{{ $dataSiswa->class12 }}</span>
+                        <td>Riwayat Kelas </td>
+                        <td><span
+                                class="badge mx-1 badge-info">{{ $dataSiswa->class10 ? $dataSiswa->class10 : '-' }}</span><span
+                                class="badge mx-1 badge-danger">{{ $dataSiswa->class11 ? $dataSiswa->class11 : '-' }}</span><span
+                                class="badge mx-1 badge-success">{{ $dataSiswa->class12 ? $dataSiswa->class12 : '-' }}</span>
                         </td>
                     </tr>
                     <tr>
-                        <td>Kamar </td>
-                        <td>{{ $dataSiswa->room10 }}, {{ $dataSiswa->room11 }}, {{ $dataSiswa->room12 }}</td>
+                        <td>Riwayat Kamar </td>
+                        <td>{{ $dataSiswa->room10 ? $dataSiswa->room10 : '-' }},
+                            {{ $dataSiswa->room11 ? $dataSiswa->room11 : '-' }},
+                            {{ $dataSiswa->room12 ? $dataSiswa->room12 : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Alamat Lengkap </td>
-                        <td>{{ $dataSiswa->address }}, {{ $dataSiswa->village }}, {{ $dataSiswa->district }},
-                            {{ $dataSiswa->city }}, {{ $dataSiswa->province }}, {{ $dataSiswa->zipCode }}</td>
+                        <td>{{ $dataSiswa->address? $dataSiswa->address .', ' .$dataSiswa->village .', ' .$dataSiswa->district .', ' .$dataSiswa->city .', ' .$dataSiswa->province .', ' .$dataSiswa->zipCode: '-' }}
+                        </td>
                     </tr>
                 </table>
                 <h5>Nomor Identitas</h5>
@@ -60,7 +63,7 @@
                     </tr>
                     <tr>
                         <td>NIK</td>
-                        <td>{{ $dataSiswa->nik }}</td>
+                        <td>{{ $dataSiswa->nik ? $dataSiswa->nik : '-' }}</td>
                     </tr>
                 </table>
                 <h5>Riwayat Pendidikan</h5>
@@ -84,11 +87,11 @@
                     </tr>
                     <tr>
                         <td>Pekerjaan Ayah</td>
-                        <td>{{ $dataSiswa->fatherJob }}</td>
+                        <td>{{ $dataSiswa->fatherJob ? $dataSiswa->fatherJob : '-' }}</td>
                     </tr>
                     <tr>
                         <td>No Telp Ayah</td>
-                        <td>{{ $dataSiswa->fatherPhone }}</td>
+                        <td>{{ $dataSiswa->fatherPhone ? $dataSiswa->fatherPhone : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Nama Ibu </td>
@@ -98,26 +101,26 @@
                     </tr>
                     <tr>
                         <td>Pekerjaan Ibu </td>
-                        <td>{{ $dataSiswa->motherJob }}</td>
+                        <td>{{ $dataSiswa->motherJob ? $dataSiswa->motherJob : '-' }}</td>
                     </tr>
                     <tr>
                         <td>No Telp Ibu </td>
-                        <td>{{ $dataSiswa->motherPhone }}</td>
+                        <td>{{ $dataSiswa->motherPhone ? $dataSiswa->motherPhone : '-' }}</td>
                     </tr>
                 </table>
                 <h5>Status & Data Kelanjutan</h5>
                 <table class="table table-sm">
                     <tr>
                         <td>Status Pernikahan</td>
-                        <td>{{ $dataSiswa->maritalStatus }}</td>
+                        <td>{{ $dataSiswa->maritalStatus ? $dataSiswa->maritalStatus : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Lokasi Khidmah</td>
-                        <td>{{ $dataSiswa->khidmahPlace }}</td>
+                        <td>{{ $dataSiswa->khidmahPlace ? $dataSiswa->khidmahPlace : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Studi Lanjut</td>
-                        <td>{{ $dataSiswa->furtherStudy }}</td>
+                        <td>{{ $dataSiswa->furtherStudy ? $dataSiswa->furtherStudy : '-' }}</td>
                     </tr>
                     <tr>
                         <td>Link Drive Berkas </td>
@@ -134,11 +137,12 @@
                     <tr>
                         <td>Alamat Email Angkatan</td>
                         <td>{{ $dataSiswa->shEmail }} <a href="https://webmail.satuhaluan.com"
-                                class="badge badge-info">Click Here to Login</a></td>
+                                class="badge badge-info">Click Here to Login</a><br><small
+                                class="form-text text-muted">Password : {{ $dataSiswa->passwordEmail }}</small></td>
                     </tr>
                     <tr>
                         <td>Alamat Email Pribadi</td>
-                        <td>{{ $dataSiswa->myEmail }}</td>
+                        <td>{{ $dataSiswa->myEmail ? $dataSiswa->updated_at : '-' }}</td>
                     </tr>
                 </table>
                 <small class="text-muted">Terakhir diperbarui :
