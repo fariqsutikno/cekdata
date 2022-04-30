@@ -24,3 +24,15 @@ Route::controller(dataSiswaController::class)->group(function () {
         Route::get('/search', 'search')->name('searching');
         Route::post('/', 'update')->name('update');
 });
+
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return "Cleared!";
+});
+
+Route::get('/migrate',function(){
+   Artisan::call('migrate');
+   return "migrated";
+});
